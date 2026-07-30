@@ -1,361 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Me ❤️</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
-<title>For My Princess ❤️</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Trebuchet MS',sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#ffd6e7,#fff0f5);
-overflow:hidden;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.page{
-display:none;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-width:100%;
-height:100%;
-padding:25px;
-animation:fade .6s;
-}
-
-.page.active{
-display:flex;
-}
-
-@keyframes fade{
-from{
-opacity:0;
-transform:scale(.95);
-}
-to{
-opacity:1;
-transform:scale(1);
-}
-}
-
-h1{
-color:#ff4d88;
-margin-bottom:15px;
-}
-
-h2{
-color:#ff4d88;
-margin-bottom:15px;
-}
-
-p{
-font-size:19px;
-line-height:1.7;
-max-width:650px;
-color:#444;
-margin-bottom:20px;
-}
-
-button{
-
-padding:15px 35px;
-font-size:18px;
-border:none;
-border-radius:40px;
-cursor:pointer;
-transition:.3s;
-
-}
-
-.yes{
-
-background:#ff4d88;
-color:white;
-
-}
-
-.yes:hover{
-
-transform:scale(1.05);
-
-}
-
-.no{
-
-background:white;
-color:#ff4d88;
-position:absolute;
-
-}
-
-.teddy{
-
-width:220px;
-margin-bottom:20px;
-animation:bounce 2s infinite;
-
-}
-
-@keyframes bounce{
-
-0%,100%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-12px);
-}
-
-}
-
-.roseImage{
-
-width:280px;
-margin-top:20px;
-
-}
-
-.arrow{
-
-font-size:40px;
-margin-top:15px;
-animation:updown 1s infinite;
-
-}
-
-@keyframes updown{
-
-0%,100%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(10px);
-}
-
-}
-
-/* Envelope */
-
-.envelope{
-
-margin-top:25px;
-position:relative;
-width:220px;
-height:150px;
-cursor:pointer;
-
-}
-
-.envelope-base{
-
-position:absolute;
-bottom:0;
-width:220px;
-height:120px;
-background:#ff7aa8;
-border-radius:8px;
-
-}
-
-.envelope-left{
-
-position:absolute;
-left:0;
-bottom:0;
-width:0;
-height:0;
-border-left:110px solid #ff94ba;
-border-top:60px solid transparent;
-border-bottom:60px solid transparent;
-
-}
-
-.envelope-right{
-
-position:absolute;
-right:0;
-bottom:0;
-width:0;
-height:0;
-border-right:110px solid #ff94ba;
-border-top:60px solid transparent;
-border-bottom:60px solid transparent;
-
-}
-
-.flap{
-
-position:absolute;
-top:0;
-left:0;
-width:0;
-height:0;
-border-left:110px solid transparent;
-border-right:110px solid transparent;
-border-top:80px solid #ff5d95;
-transform-origin:top;
-transition:1s;
-
-}
-
-.letter{
-
-position:absolute;
-left:20px;
-bottom:15px;
-width:180px;
-height:95px;
-background:white;
-border-radius:5px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:18px;
-font-weight:bold;
-color:#ff4d88;
-transition:1s;
-z-index:-1;
-
-}
-
-.open .flap{
-
-transform:rotateX(180deg);
-
-}
-
-.open .letter{
-
-transform:translateY(-110px);
-z-index:3;
-
-}
-
-</style>
-
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- PAGE 1 -->
+<div class="background"></div>
 
-<div class="page active" id="page1">
+<div class="container">
 
-<img class="teddy" src="teddy.png">
+    <div class="envelope" id="envelope">
 
-<h1>Would yuu like to get yuur gift? ❤️</h1>
+        <div class="shadow"></div>
 
-<div>
+        <div class="back"></div>
 
-<button class="yes" onclick="nextPage(2)">
-Yes
-</button>
+        <div class="letter">
 
-<button class="no" id="noBtn">
-No
-</button>
+            <div class="paper">
 
-</div>
+                <h2>To My Baby ❤️</h2>
 
-</div>
+                <p>
+                    in a world filled with temporary connections,
+                    shallow intentions, and lustful distractions,
+                    i want yuu baby!
+                </p>
 
-<!-- PAGE 2 -->
+                <p class="continue">
+                    (click anywhere to continue reading...)
+                </p>
 
-<div class="page" id="page2">
+            </div>
 
-<h1>🌹 Roses for my Princess 🌹</h1>
+        </div>
 
-<img src="roses.png" class="roseImage">
+        <div class="front"></div>
 
-<div class="arrow">
-⬇️
-</div>
+        <div class="flap"></div>
 
-<p>Click the letter ❤️</p>
+        <span class="open-text">
+            💌<br>
+            open me
+        </span>
 
-<div class="envelope" id="envelope">
-
-<div class="flap"></div>
-
-<div class="envelope-base"></div>
-
-<div class="envelope-left"></div>
-
-<div class="envelope-right"></div>
-
-<div class="letter" id="letter">
-Open Me ❤️
-</div>
+    </div>
 
 </div>
 
+<div class="overlay" id="overlay">
+
+    <div class="full-letter">
+
+        <button id="close">
+            ✕
+        </button>
+
+        <h1>For Yuu ❤️</h1>
+
+        <div class="message">
+
+            <p>
+                in a world filled with temporary connections,
+                shallow intentions,
+                and lustful distractions,
+                i want yuu baby!
+            </p>
+
+            <p>
+                not for a moment,
+                not for convenience,
+                and not just when things are easy,
+                but i want yuu for something real.
+            </p>
+
+            <p>
+                i want yuur heart,
+                yuur mind,
+                yuur laughter,
+                yuur softness,
+                and EVEN the parts of yuu
+                that yuu're still learning
+                to understand. ❤️
+            </p>
+
+            <p>
+                and if yuu're wondering whether
+                yuur love would be worth giving,
+                whether the lover girl era
+                would be worth bringing back...
+            </p>
+
+            <p>
+                in all the noise of this world,
+                it is yuu that i want.
+            </p>
+
+            <h2>
+                my eyes now only see yuu.
+                🧸❤️
+            </h2>
+
+        </div>
+
+    </div>
+
 </div>
-<!-- PAGE 3 -->
 
-<!-- PAGE 4 -->
-
-<div class="page" id="page4">
-
-<h1>Sorry Disney...</h1>
-
-<h2 style="color:#ff4f87; margin-top:15px;">
-...but here's my favourite princess ❤️
-</h2>
-
-<img id="princessImg" src="princess.jpg" alt="My Princess">
-
-<p style="margin-top:20px;">
-Thank yuu for being yuu. ❤️
-</p>
-
-</div>
-
-<script>
-
-const noBtn = document.getElementById("noBtn");
-
-noBtn.addEventListener("mouseover", moveButton);
-noBtn.addEventListener("click", moveButton);
-
-function moveButton(){
-
-const x = Math.random() * (window.innerWidth - 120);
-
-const y = Math.random() * (window.innerHeight - 80);
-
-noBtn.style.left = x + "px";
-noBtn.style.top = y + "px";
-
-}
-
-function nextPage(page){
-
-document.querySelectorAll(".page").forEach(p=>{
-
-p.classList.remove("active");
-
-});
-
-document.getElementById("page"+page).classList.add("active");
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
+/* Google Font Backup */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Caveat:wght@700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f8f6f2;
+    font-family:'Cormorant Garamond',serif;
+    position:relative;
+}
+
+/* Newspaper-style background */
+
+.background{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at center,
+        rgba(255,255,255,.75),
+        rgba(241,239,234,.95)),
+        url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    background-size:cover;
+    filter:brightness(1.02);
+}
+
+/* faded newspaper text */
+
+.background::before{
+    content:"THE LOVE TIMES   •   SPECIAL EDITION   •   EVERY LOVE STORY HAS A BEGINNING";
+    position:absolute;
+    top:40px;
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
+    text-align:center;
+    font-size:18px;
+    letter-spacing:7px;
+    color:rgba(0,0,0,.07);
+    font-weight:bold;
+}
+
+.background::after{
+    content:"LOVE • MEMORIES • FOREVER • LETTERS • HEART •";
+    position:absolute;
+    bottom:35px;
+    width:100%;
+    text-align:center;
+    color:rgba(0,0,0,.06);
+    letter-spacing:8px;
+    font-size:16px;
+}
+
+.container{
+    position:relative;
+    z-index:5;
+}
+
+/* Floating animation */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-14px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+.envelope{
+
+    width:330px;
+    height:220px;
+    position:relative;
+    cursor:pointer;
+    animation:float 3.5s ease-in-out infinite;
+
+}
+
+/* shadow */
+
+.shadow{
+
+    position:absolute;
+    bottom:-28px;
+    left:50%;
+    width:220px;
+    height:24px;
+    transform:translateX(-50%);
+    border-radius:50%;
+    background:rgba(0,0,0,.12);
+    filter:blur(10px);
+
+}
+
+/* envelope body */
+
+.back{
+
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#fffdf9;
+    border-radius:10px;
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.12),
+        inset 0 0 25px rgba(255,255,255,.8);
+
+}
+
+/* lower front */
+
+.front{
+
+    position:absolute;
+    bottom:0;
+
+    width:100%;
+    height:120px;
+
+    background:#f2ede5;
+
+    clip-path:polygon(0 0,50% 75%,100% 0,100% 100%,0 100%);
+    border-radius:0 0 10px 10px;
+}
+
+/* flap */
+
+.flap{
+
+    position:absolute;
+
+    width:100%;
+    height:120px;
+
+    background:#faf6ef;
+
+    clip-path:polygon(0 100%,50% 0,100% 100%);
+    transform-origin:top;
+    transition:.9s ease;
+
+    z-index:8;
+
+    border-radius:10px 10px 0 0;
+
+}
+
+/* open animation */
+
+.envelope.open .flap{
+
+    transform:rotateX(180deg);
+
+}
+
+/* letter */
+
+.letter{
+
+    position:absolute;
+
+    width:90%;
+    left:5%;
+    top:18px;
+
+    transition:1s;
+
+    z-index:4;
+
+}
+
+.envelope.open .letter{
+
+    transform:translateY(-145px);
+
+}
+
+.paper{
+
+    background:#fffefb;
+    border-radius:8px;
+    padding:25px;
+    box-shadow:0 12px 25px rgba(0,0,0,.10);
+    min-height:260px;
+
+}
+
+.paper h2{
+
+    text-align:center;
+    margin-bottom:18px;
+    font-family:'Caveat',cursive;
+    color:#b83d5a;
+    font-size:36px;
+
+}
+
+.paper p{
+
+    line-height:1.8;
+    font-size:19px;
+    color:#444;
+
+}
+
+.continue{
+
+    margin-top:30px;
+    text-align:center;
+    color:#999;
+    font-size:16px;
+    font-style:italic;
+
+}
+
+/* open me */
+
+.open-text{
+
+    position:absolute;
+    top:58%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:12;
+
+    font-family:'Caveat',cursive;
+    font-size:36px;
+    color:#444;
+    text-align:center;
+    transition:.4s;
+
+}
+
+.envelope.open .open-text{
+
+    opacity:0;
+
+}
+
+/* Fullscreen letter */
+
+.overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(248,246,242,.96);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.6s;
+
+    z-index:50;
+
+}
+
+.overlay.show{
+
+    opacity:1;
+    pointer-events:auto;
+
+}
+
+.full-letter{
+
+    width:min(90%,700px);
+    max-height:85vh;
+    overflow:auto;
+
+    background:#fffefc;
+    padding:50px;
+
+    border-radius:14px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+}
+
+.full-letter h1{
+
+    text-align:center;
+    margin-bottom:35px;
+
+    color:#b63d5d;
+
+    font-family:'Caveat',cursive;
+    font-size:52px;
+
+}
+
+.message p{
+
+    margin-bottom:24px;
+    font-size:22px;
+    line-height:1.9;
+    color:#444;
+
+}
+
+.message h2{
+
+    margin-top:30px;
+    text-align:center;
+    font-family:'Caveat',cursive;
+    font-size:44px;
+    color:#d14d6d;
+
+}
+
+#close{
+
+    float:right;
+    border:none;
+    background:none;
+    font-size:30px;
+    cursor:pointer;
+    color:#777;
+    transition:.3s;
+
+}
+
+#close:hover{
+
+    transform:rotate(90deg);
+
+}
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#d8d2ca;
+    border-radius:20px;
+
+}
