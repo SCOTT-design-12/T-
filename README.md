@@ -307,209 +307,55 @@ Open Me ❤️
 </div>
 <!-- PAGE 3 -->
 
-<div class="page" id="page3">
-
-<h1>💌 Just for Yuu ❤️</h1>
-
-<div class="loveLetter">
-
-<p>
-
-In a world filled with temporary connections,
-shallow intentions,
-and lustful distractions...
-
-</p>
-
-<p>
-
-i want yuu baby.
-
-Not for a moment.
-
-Not for convenience.
-
-Not just when things are easy.
-
-</p>
-
-<p>
-
-I want yuu for something real.
-
-I want yuur heart.
-
-I want yuur mind.
-
-I want yuur laughter.
-
-I want yuur softness.
-
-And even the parts of yuu
-that yuu're still learning to understand. ❤️
-
-</p>
-
-<p>
-
-In all the noise of this world...
-
-it is yuu that i want.
-
-My eyes now only see yuu. 🧸❤️
-
-</p>
-
-<button class="yes" onclick="nextPage(4)">
-
-One Last Thing ❤️
-
-</button>
-
-</div>
-
-</div>
-
 <!-- PAGE 4 -->
 
 <div class="page" id="page4">
 
-<div id="reveal">
+<h1>Sorry Disney...</h1>
 
-<h1 id="disneyText">
-
-Sorry Disney...
-
-</h1>
-
-<h2 id="princessText" style="display:none;">
-
+<h2 style="color:#ff4f87; margin-top:15px;">
 ...but here's my favourite princess ❤️
-
 </h2>
 
-<img
-id="princessImg"
-src="princess.jpg"
-alt="Princess"
-style="display:none;">
+<img id="princessImg" src="princess.jpg" alt="My Princess">
 
-<p
-id="endingText"
-style="
-display:none;
-font-size:22px;
-margin-top:25px;
-color:#555;
-max-width:600px;
-">
-
-Every fairytale has a princess...
-
-<br><br>
-
-Mine just happens to be real. ❤️
-
+<p style="margin-top:20px;">
+Thank yuu for being yuu. ❤️
 </p>
 
 </div>
 
-</div>
+<script>
 
-<style>
+const noBtn = document.getElementById("noBtn");
 
-.loveLetter{
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("click", moveButton);
 
-background:white;
+function moveButton(){
 
-padding:30px;
+const x = Math.random() * (window.innerWidth - 120);
 
-border-radius:20px;
+const y = Math.random() * (window.innerHeight - 80);
 
-max-width:700px;
-
-box-shadow:0 10px 35px rgba(0,0,0,.12);
-
-}
-
-#page4{
-
-background:#000;
-
-color:white;
-
-transition:1.5s;
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
 
 }
 
-#page4 h1{
+function nextPage(page){
 
-font-size:48px;
+document.querySelectorAll(".page").forEach(p=>{
 
-opacity:0;
+p.classList.remove("active");
 
-animation:fadeText 2s forwards;
+});
 
-}
-
-#page4 h2{
-
-margin-top:20px;
-
-font-size:34px;
-
-color:#ff7db0;
-
-opacity:0;
+document.getElementById("page"+page).classList.add("active");
 
 }
 
-#princessImg{
+</script>
 
-width:330px;
-
-max-width:90%;
-
-margin-top:35px;
-
-border-radius:25px;
-
-box-shadow:0 0 35px hotpink;
-
-opacity:0;
-
-}
-
-#endingText{
-
-opacity:0;
-
-}
-
-@keyframes fadeText{
-
-from{
-
-opacity:0;
-
-transform:translateY(25px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-.fadeIn{
-
-animation:fadeText 2s forwards;
-
-}
-
-</style>
+</body>
+</html>
